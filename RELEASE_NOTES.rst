@@ -224,6 +224,11 @@ Improvements
 
 Bug Fixes
 """""""""
+- Mark more fields on API as dump-only (#38616)
+- Fix ``total_entries`` count on the event logs endpoint (#38625)
+- Add padding to bottom of log block. (#38610)
+- Properly serialize nested attrs classes (#38591)
+- Fixing the ``tz`` in next run ID info (#38482)
 - Show abandoned tasks in Grid View (#38511)
 - Apply task instance mutation hook consistently (#38440)
 - Override ``chakra`` styles to keep ``dropdowns`` in filter bar (#38456)
@@ -250,6 +255,7 @@ Bug Fixes
 
 Miscellaneous
 """""""""""""
+- Update log level to debug from warning about scheduled_duration metric (#38180)
 - Use ``importlib_metadata`` with compat to Python 3.10/3.12 ``stdlib`` (#38366)
 - Refactored ``__new__`` magic method of BaseOperatorMeta to avoid bad mixing classic and decorated operators (#37937)
 - Use ``sys.version_info`` for determine Python Major.Minor (#38372)
