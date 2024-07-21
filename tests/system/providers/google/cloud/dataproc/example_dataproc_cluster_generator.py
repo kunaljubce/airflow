@@ -42,8 +42,8 @@ PROJECT_ID = os.environ.get("SYSTEM_TESTS_GCP_PROJECT", "default")
 
 BUCKET_NAME = f"bucket_{DAG_ID}_{ENV_ID}"
 CLUSTER_NAME = f"cluster-{ENV_ID}-{DAG_ID}".replace("_", "-")
-REGION = "europe-west1"
-ZONE = "europe-west1-b"
+REGION = "asia-south2" # "europe-west1"
+ZONE = "asia-south2-c"
 INIT_FILE_SRC = str(Path(__file__).parent / "resources" / "pip-install.sh")
 
 # Cluster definition: Generating Cluster Config for DataprocCreateClusterOperator
@@ -64,6 +64,8 @@ CLUSTER_GENERATOR_CONFIG = ClusterGenerator(
     metadata={"PIP_PACKAGES": "pyyaml requests pandas openpyxl"},
     num_preemptible_workers=1,
     preemptibility="PREEMPTIBLE",
+    network_uri="",
+    subnetwork_uri="airflow-gcp-subnet",
 ).make()
 
 # [END how_to_cloud_dataproc_create_cluster_generate_cluster_config]

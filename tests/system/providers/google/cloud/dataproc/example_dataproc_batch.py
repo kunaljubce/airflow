@@ -40,7 +40,8 @@ from tests.system.providers.google import DEFAULT_GCP_SYSTEM_TEST_PROJECT_ID
 ENV_ID = os.environ.get("SYSTEM_TESTS_ENV_ID")
 DAG_ID = "dataproc_batch"
 PROJECT_ID = os.environ.get("SYSTEM_TESTS_GCP_PROJECT") or DEFAULT_GCP_SYSTEM_TEST_PROJECT_ID
-REGION = "europe-west1"
+REGION = "asia-south2" # "europe-west1"
+SUBNET = "airflow-gcp-subnet"
 
 BATCH_ID = f"batch-{ENV_ID}-{DAG_ID}".replace("_", "-")
 BATCH_ID_2 = f"batch-{ENV_ID}-{DAG_ID}-2".replace("_", "-")
@@ -48,6 +49,12 @@ BATCH_ID_3 = f"batch-{ENV_ID}-{DAG_ID}-3".replace("_", "-")
 BATCH_ID_4 = f"batch-{ENV_ID}-{DAG_ID}-4".replace("_", "-")
 
 BATCH_CONFIG = {
+    "environment_config": {
+        "execution_config": {
+            "subnetwork_uri": "airflow-gcp-subnet",
+            "network_tags": ["dev", "user0124"],
+        }
+    },
     "spark_batch": {
         "jar_file_uris": ["file:///usr/lib/spark/examples/jars/spark-examples.jar"],
         "main_class": "org.apache.spark.examples.SparkPi",

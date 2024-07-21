@@ -1004,7 +1004,7 @@ class DataprocHook(GoogleBaseHook):
                 "batch": batch,
                 "batch_id": batch_id,
                 "request_id": request_id,
-                "tags": tags,
+                # "tags": tags,
             },
             retry=retry,
             timeout=timeout,
