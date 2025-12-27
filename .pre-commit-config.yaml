@@ -461,6 +461,7 @@ repos:
             ^airflow-core/tests/unit/dag_processing/test_manager.py$|
             ^airflow-core/tests/unit/dag_processing/test_processor.py$|
             ^dev/airflow_perf/scheduler_dag_execution_timing.py$|
+            ^devel-common/src/tests_common/pytest_plugin.py$|
             ^providers/celery/.*\.py$|
             ^providers/cncf/kubernetes/.*\.py$|
             ^providers/databricks/.*\.py$|
