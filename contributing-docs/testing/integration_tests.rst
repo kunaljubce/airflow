@@ -50,7 +50,7 @@ until you stop the Breeze environment with the ``breeze down`` command.
 While you can run ``breeze`` or ``breeze shell`` with one or multiple integrations enabled, some integrations
 are pure "provider" integrations, and some are "core" integration. Which means that some of the integrations
 have tests defined in the "providers" tests (because they are testing provider features), but other
-integrations are testing core features of Airflow (Fore example executors with CeleryExecutor).
+integrations are testing core features of Airflow (For example executors with CeleryExecutor).
 
 The following integrations are available ("Core tests ?" column indicates if the integration is a
 core or provider type of test.
